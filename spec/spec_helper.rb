@@ -1,1 +1,1 @@
-require_relative '../csv'
+require_relative '../jsongenerator'
