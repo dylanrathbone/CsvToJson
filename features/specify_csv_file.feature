@@ -12,3 +12,6 @@ Feature: Specify a csv file
     When I provide the file "invalid.csv"
     Then the file should be validated
     Then I should receive the message "file import failed!"
+
+
+    test
