@@ -8,6 +8,7 @@ Feature: Specify a csv file
     Then the file should be validated
     Then I should receive the message "Success file imported"
 
+
   Scenario: Specify an invalid csv file
     When I provide the file "invalid.csv"
     Then the file should be validated
