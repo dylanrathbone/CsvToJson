@@ -8,24 +8,42 @@ describe JsonGenerator do
     $stdout = StringIO.new
   end
 
-  before(:each) do
-    csv_converter = JsonGenerator.new
-    csv_converter.generate
-  end
-
   after(:all) do
     $stdout = STDOUT
   end
 
-  it 'should ask for ask the user to enter the name of a csv file' do
-    expect($stdout.string).to match(/Please enter the name of a file to jsonify: /)
+  context 'valid file' do
+
+    it 'should notify the user when a valid file name has been provided' do
+      JsonGenerator.new 'stock_data.csv'
+      expect($stdout.string).to match('File import successfull.')
+    end
+
+    it 'should read the file from disk' do
+      json_generator = JsonGenerator.new 'stock_data.csv'
+      file_contents = json_generator.file_contents.to_s
+      file_contents.should_not be_empty
+    end
+
+    it 'should notify the user that the file has been read in' do
+      JsonGenerator.new 'stock_data.csv'
+      expect($stdout.string).to match("Loaded file: stock_data.csv")
+    end
+
   end
 
+  context 'invalid file' do
 
-  it 'should notify the user when a invalid file name has been entered' do
-    csv_converter = JsonGenerator.new
-    csv_converter.file_name = 'Filename_Without_CSV_extension.csv'
-    expect($stdout.string).to match(/Filename entered is not of a valid format!/)
+    it 'should notify the user when a file name without the ".csv" extension has been provided' do
+      JsonGenerator.new 'invalid_file_name'
+      expect($stdout.string).to match("Filename entered is not of a valid format!")
+    end
+
+    it 'should notify the user if the file specified does not exist' do
+      JsonGenerator.new 'dylan.csv'
+      expect($stdout.string).to match("File specified does not exist!")
+    end
+
   end
 
 end
