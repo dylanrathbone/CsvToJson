@@ -1,7 +1,9 @@
+require 'csv'
+
 class JsonGenerator
 
   attr_accessor :filename
-  attr_accessor :file_contents
+  attr_accessor :csv_data
 
   def initialize filename
     @filename = filename
@@ -16,20 +18,28 @@ class JsonGenerator
   def check_filename_format
     if @filename.end_with?(".csv")
       puts "File import successfull."
-      read_in_file
+      read_and_load
     else
       puts "Filename entered is not of a valid format!"
     end
   end
 
-  def read_in_file
+  def read_and_load
     if File.exist?(@filename)
-      @file_contents = File.open(@filename)
+
+      load_csv_data
+
       puts "Loaded file: #{@filename.to_s}."
     else
       puts "File specified does not exist!"
     end
+  end
 
+  def load_csv_data
+    file = File.open(@filename)
+    csv_data = file.read
+    file.close
+    @csv_data = CSV.new(csv_data).to_a
   end
 
 end

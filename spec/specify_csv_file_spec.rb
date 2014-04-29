@@ -19,10 +19,9 @@ describe JsonGenerator do
       expect($stdout.string).to match('File import successfull.')
     end
 
-    it 'should read the file from disk' do
-      json_generator = JsonGenerator.new 'stock_data.csv'
-      file_contents = json_generator.file_contents.to_s
-      file_contents.should_not be_empty
+    it 'should load in the csv file and convert it to an array' do
+      json_generator = JsonGenerator.new 'test_data.csv'
+      json_generator.csv_data.to_s.should equal("[[\"item id\", \" description\", \" price\"], [\"111010\", \" Coffee\", \" $1.25\"]]")
     end
 
     it 'should notify the user that the file has been read in' do
