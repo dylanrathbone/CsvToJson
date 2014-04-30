@@ -37,7 +37,7 @@ class JsonGenerator
   def load_and_generate
     csv = CSV.new(File.open(@filename), :headers => true, :header_converters => :symbol, :converters => :all)
     @generated_json = JSON.pretty_generate(csv.to_a.map {|row| row.to_hash })
-    puts "JSON document successfully generated from file: #{@filename}"
+    puts "JSON document successfully generated from file: #{@filename}\n\n#{@generated_json}"
   end
 
 end
