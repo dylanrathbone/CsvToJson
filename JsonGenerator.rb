@@ -1,9 +1,10 @@
 require 'csv'
+require 'json'
 
 class JsonGenerator
 
   attr_accessor :filename
-  attr_accessor :csv_data
+  attr_accessor :generated_json
 
   def initialize filename
     @filename = filename
@@ -26,20 +27,17 @@ class JsonGenerator
 
   def read_and_load
     if File.exist?(@filename)
-
-      load_csv_data
-
-      puts "Loaded file: #{@filename.to_s}."
+      puts "Loading file: #{@filename.to_s}..."
+      load_and_generate
     else
       puts "File specified does not exist!"
     end
   end
 
-  def load_csv_data
-    file = File.open(@filename)
-    csv_data = file.read
-    file.close
-    @csv_data = CSV.new(csv_data).to_a
+  def load_and_generate
+    csv = CSV.new(File.open(@filename), :headers => true, :header_converters => :symbol, :converters => :all)
+    @generated_json = JSON.pretty_generate(csv.to_a.map {|row| row.to_hash })
+    puts "JSON document successfully generated from file: #{@filename}"
   end
 
 end

@@ -15,18 +15,23 @@ describe JsonGenerator do
   context 'valid file' do
 
     it 'should notify the user when a valid file name has been provided' do
-      JsonGenerator.new 'stock_data.csv'
+      JsonGenerator.new 'test_data.csv'
       expect($stdout.string).to match('File import successfull.')
     end
 
-    it 'should load in the csv file and convert it to an array' do
-      json_generator = JsonGenerator.new 'test_data.csv'
-      json_generator.csv_data.to_s.should equal("[[\"item id\", \" description\", \" price\"], [\"111010\", \" Coffee\", \" $1.25\"]]")
+    it 'should notify the user that the file has been read in' do
+      JsonGenerator.new 'test_data.csv'
+      expect($stdout.string).to match("Loading file: test_data.csv...")
     end
 
-    it 'should notify the user that the file has been read in' do
-      JsonGenerator.new 'stock_data.csv'
-      expect($stdout.string).to match("Loaded file: stock_data.csv")
+    it 'should convert the csv to JSON' do
+      json_generator = JsonGenerator.new 'test_data.csv'
+      expect(json_generator.generated_json).to eq("[\n  {\n    \"item_id\": 111010,\n    \"_description\": \" Coffee\",\n    \"_price\": \" $1.25\"\n  }\n]")
+    end
+
+    it 'should notify the user that the conversion is complete' do
+      JsonGenerator.new 'test_data.csv'
+      expect($stdout.string).to match("JSON document successfully generated from file: test_data.csv")
     end
 
   end
