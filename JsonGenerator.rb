@@ -12,8 +12,8 @@ class JsonGenerator
   end
 
   def generate
-    if valid_filename_format?
-      if file_exists?
+    if valid_filename_format? then
+      if file_exists? then
           load_csv
       else
         puts "File specified does not exist!"
