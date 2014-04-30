@@ -8,35 +8,41 @@ class JsonGenerator
 
   def initialize filename
     @filename = filename
-    prompt_and_read_file
+    generate
   end
 
-  def prompt_and_read_file
-    check_filename_format
-  end
-
-  private
-  def check_filename_format
-    if @filename.end_with?(".csv")
-      puts "File import successfull."
-      read_and_load
+  def generate
+    if valid_filename_format?
+      if file_exists?
+          load_csv
+      else
+        puts "File specified does not exist!"
+      end
     else
       puts "Filename entered is not of a valid format!"
     end
   end
 
-  def read_and_load
+  private
+  def valid_filename_format?
+    @filename.end_with?(".csv")
+  end
+
+  def file_exists?
     if File.exist?(@filename)
       puts "Loading file: #{@filename.to_s}..."
-      load_and_generate
-    else
-      puts "File specified does not exist!"
+      return true
     end
   end
 
-  def load_and_generate
+  def load_csv
     csv = CSV.new(File.open(@filename), :headers => true, :header_converters => :symbol, :converters => :all)
-    @generated_json = JSON.pretty_generate(csv.to_a.map {|row| row.to_hash })
+    puts "File import successfull."
+    generate_json(csv)
+  end
+
+  def generate_json csv
+    @generated_json = JSON.pretty_generate(csv.to_a.map { |row| row.to_hash })
     puts "JSON document successfully generated from file: #{@filename}\n\n#{@generated_json}"
   end
 

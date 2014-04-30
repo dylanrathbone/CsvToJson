@@ -14,14 +14,15 @@ describe JsonGenerator do
 
   context 'valid file' do
 
-    it 'should notify the user when a valid file name has been provided' do
-      JsonGenerator.new 'test_data.csv'
-      expect($stdout.string).to match('File import successfull.')
-    end
-
     it 'should notify the user that the file has been read in' do
       JsonGenerator.new 'test_data.csv'
       expect($stdout.string).to match("Loading file: test_data.csv...")
+    end
+
+
+    it 'should notify the user when a valid file name has been provided' do
+      JsonGenerator.new 'test_data.csv'
+      expect($stdout.string).to match('File import successfull.')
     end
 
     it 'should convert the csv to JSON' do
