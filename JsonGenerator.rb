@@ -11,9 +11,10 @@ class JsonGenerator
     generate
   end
 
+  private
   def generate
-    if valid_filename_format? then
-      if file_exists? then
+    if valid_filename_format?
+      if file_exists?
           load_csv
       else
         puts "File specified does not exist!"
@@ -23,7 +24,6 @@ class JsonGenerator
     end
   end
 
-  private
   def valid_filename_format?
     @filename.end_with?(".csv")
   end
@@ -36,9 +36,9 @@ class JsonGenerator
   end
 
   def load_csv
-    csv = CSV.new(File.open(@filename), :headers => true, :header_converters => :symbol, :converters => :all)
+    csv_data = CSV.new(File.open(@filename), :headers => true, :header_converters => :symbol, :converters => :all)
     puts "File import successfull."
-    generate_json(csv)
+    generate_json(csv_data)
   end
 
   def generate_json csv

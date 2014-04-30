@@ -27,7 +27,7 @@ describe JsonGenerator do
 
     it 'should convert the csv to JSON' do
       json_generator = JsonGenerator.new 'test_data.csv'
-      expect(json_generator.generated_json).to eq("[\n  {\n    \"item_id\": 111010,\n    \"_description\": \" Coffee\",\n    \"_price\": \" $1.25\"\n  }\n]")
+      expect(json_generator.generated_json).to eq("[\n  {\n    \"item_id\": 111010,\n    \"description\": \"Coffee\",\n    \"price\": \"$1.25\"\n  }\n]")
     end
 
     it 'should notify the user that the conversion is complete' do
