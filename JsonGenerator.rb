@@ -1,5 +1,6 @@
 require 'csv'
 require 'json'
+require 'helpers/UserMessages'
 
 class JsonGenerator
 
@@ -17,10 +18,10 @@ class JsonGenerator
       if file_exists?
           load_csv
       else
-        puts "File specified does not exist!"
+        puts "#{UserMessages::ErrorMessages::FILE_DOES_NOT_EXIST}"
       end
     else
-      puts "Filename entered is not of a valid format!"
+      puts "#{UserMessages::ErrorMessages::INVALID_FILE_FORMAT}"
     end
   end
 
@@ -30,20 +31,20 @@ class JsonGenerator
 
   def file_exists?
     if File.exist?(@filename)
-      puts "Loading file: #{@filename.to_s}..."
+      puts "#{UserMessages::GeneralMessages::LOADING_FILE} #{@filename.to_s}..."
       return true
     end
   end
 
   def load_csv
     csv_data = CSV.new(File.open(@filename), :headers => true, :header_converters => :symbol, :converters => :all)
-    puts "File import successfull."
+    puts "#{UserMessages::GeneralMessages::FILE_IMPORT_SUCCESS}"
     generate_json(csv_data)
   end
 
   def generate_json csv
     @generated_json = JSON.pretty_generate(csv.to_a.map { |row| row.to_hash })
-    puts "JSON document successfully generated from file: #{@filename}\n\n#{@generated_json}"
+    puts "#{UserMessages::GeneralMessages::JSON_GENERATED} #{@filename}\n\n#{@generated_json}"
   end
 
 end
