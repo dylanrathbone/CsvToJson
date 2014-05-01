@@ -4,5 +4,5 @@ Feature: convert csv to JSON
   provide some level of validation to ensure that the csv file is of a valid format
 
   Scenario: Specify a valid csv file for coversion
-    When I provide a "valid csv" file I should receive a file "valid message"
+    When I provide a "valid csv" file I should receive a "valid message"
     Then the file should be converted to JSON and I should be displayed the "result"
