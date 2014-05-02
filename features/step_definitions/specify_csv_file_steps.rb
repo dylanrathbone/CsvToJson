@@ -1,7 +1,7 @@
 require 'JsonGenerator'
 require 'stringio'
 
-When(/^I provide a "(.*?)" file I should receive a "(.*?)"$/) do |arg1, arg2|
+When(/^I provide a "(.*?)" file I should receive a file "(.*?)"$/) do |arg1, arg2|
   pending # express the regexp above with the code you wish you had
 end
 
