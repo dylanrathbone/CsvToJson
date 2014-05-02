@@ -23,9 +23,8 @@ describe JsonGenerator do
       expect($stdout.string).to match("Loading file test_data.csv...")
     end
 
-
     it 'should notify the user when a valid file name has been provided' do
-      expect($stdout.string).to match('File loaded successfully')
+      expect($stdout.string).to match("File loaded successfully")
     end
 
     it 'should convert the csv to JSON' do
@@ -43,12 +42,17 @@ describe JsonGenerator do
 
     it 'should notify the user when a file name without the ".csv" extension has been provided' do
       JsonGenerator.new 'invalid_file_name'
-      expect($stdout.string).to match("Filename entered is not of a valid format!")
+      expect($stdout.string).to match("Filename entered is not of a valid")
+    end
+
+    it 'should notify the user when a file name has not been provided' do
+      JsonGenerator.new ''
+      expect($stdout.string).to match("Filename entered is not of a valid")
     end
 
     it 'should notify the user if the file specified does not exist' do
       JsonGenerator.new 'dylan.csv'
-      expect($stdout.string).to match("File specified does not exist!")
+      expect($stdout.string).to match("File specified does not exist")
     end
 
   end
