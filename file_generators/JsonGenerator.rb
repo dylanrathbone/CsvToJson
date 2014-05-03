@@ -1,4 +1,4 @@
-require 'helpers/file_helper'
+require 'helpers/FileHelper'
 require 'helpers/UserMessages'
 require 'json'
 

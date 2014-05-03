@@ -24,8 +24,6 @@ module FileHelper
       CSV.new(File.read(file_name), :headers => true, :header_converters => :symbol, :converters => :all)
     rescue IOError => io_error
       puts "There was a problem when trying to read the file: #{@file_name}" + io_error.to_s
-    ensure
-
     end
   end
 end
