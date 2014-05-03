@@ -4,24 +4,23 @@ require 'json'
 
 class JsonGenerator
 
-  attr_accessor :filename
+  attr_accessor :file_name
   attr_accessor :file_data
-  attr_accessor :generated_json
+  attr_accessor :generated_output
 
   CSV_FILE_EXTENSION = '.csv'
 
   def initialize(filename)
-    @filename = filename
-    generate
+    @file_name = filename
   end
 
-  private
   def generate
     if valid_filename_format? and file_exists? then load_file and generate_json end
   end
 
+  private
   def valid_filename_format?
-    if @filename.end_with?("#{CSV_FILE_EXTENSION}")
+    if @file_name.end_with?("#{CSV_FILE_EXTENSION}")
       return true
     else
       puts "#{UserMessages::ErrorMessages::INVALID_FILE_FORMAT}"
@@ -29,7 +28,7 @@ class JsonGenerator
   end
 
   def file_exists?
-    if File.exist?(@filename)
+    if File.exist?(@file_name)
       return true
     else
       puts "#{UserMessages::ErrorMessages::FILE_DOES_NOT_EXIST}"
@@ -37,8 +36,8 @@ class JsonGenerator
   end
 
   def load_file
-    puts "#{UserMessages::GeneralMessages::LOADING_FILE} #{@filename.to_s}..."
-    @file_data = CSV.new(File.open(@filename), :headers => true, :header_converters => :symbol, :converters => :all)
+    puts "#{UserMessages::GeneralMessages::LOADING_FILE} #{@file_name.to_s}..."
+    @file_data = CSV.new(File.open(@file_name), :headers => true, :header_converters => :symbol, :converters => :all)
     puts "#{UserMessages::GeneralMessages::FILE_IMPORT_SUCCESS}"
     return true
   end

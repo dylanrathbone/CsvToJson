@@ -1,1 +1,1 @@
-require_relative '../jsongenerator'
+require_relative '../FileTransformer'

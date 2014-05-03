@@ -1,4 +1,4 @@
-require 'JsonGenerator'
+require 'FileTransformer'
 require 'stringio'
 
 When(/^I provide a "(.*?)" file I should receive a file "(.*?)"$/) do |arg1, arg2|
