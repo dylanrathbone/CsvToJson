@@ -20,7 +20,6 @@ class JsonGenerator
   private
   def generate_json
     @generated_json = JSON.pretty_generate(load_file(@file_name).to_a.map { |row| row.to_hash })
-    puts "#{UserMessages::GeneralMessages::FILE_IMPORT_SUCCESS} #{@file_name.to_s}..."
     puts "#{UserMessages::GeneralMessages::JSON_GENERATED} #{@file_name}\n\n#{@generated_json}"
   end
 

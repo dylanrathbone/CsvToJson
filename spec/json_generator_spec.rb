@@ -21,11 +21,6 @@ describe JsonGenerator do
       expect($stdout.string).to match("Loading file test_data.csv...")
     end
 
-    it 'should notify the user when a valid file name has been provided' do
-      json_generator.transform_file
-      expect($stdout.string).to match("File loaded successfully")
-    end
-
     it 'should convert the csv to JSON' do
       json_generator.transform_file
       expect(json_generator.generated_json).to eq("[\n  {\n    \"item_id\": 111010,\n    \"description\": \"Coffee\",\n    \"price\": \"$1.25\"\n  }\n]")
