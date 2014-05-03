@@ -10,6 +10,7 @@ module UserMessages
     JSON_GENERATED = 'JSON document successfully generated from file'
     LOADING_FILE = 'Loading file'
     USAGE = 'usage: convert.rb <file_to_convert>, <desired file format>'
+    VALID_FILE_FORMAT = 'Please ensure that you provide a valid file format i.e. JSON, XML, YAML'
   end
 
 end
