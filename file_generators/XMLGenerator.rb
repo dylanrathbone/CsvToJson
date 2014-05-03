@@ -1,5 +1,4 @@
 require 'helpers/FileHelper'
-require 'helpers/UserMessages'
 
 class XMLGenerator
 
@@ -15,6 +14,7 @@ class XMLGenerator
     if valid_filename_format? and file_exists? then generate_xml end
   end
 
+  private
   def generate_xml
     puts 'XML Data'
   end
