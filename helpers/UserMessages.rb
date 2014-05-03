@@ -9,6 +9,7 @@ module UserMessages
     FILE_IMPORT_SUCCESS = 'File loaded successfully'
     JSON_GENERATED = 'JSON document successfully generated from file'
     LOADING_FILE = 'Loading file'
+    USAGE = 'usage: convert.rb <file_to_convert>, <desired file format>'
   end
 
 end

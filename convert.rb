@@ -1,14 +1,15 @@
 #!/usr/bin/ruby
 
 require 'FileTransformer'
-require 'JsonGenerator'
-require 'XMLGenerator'
+require 'helpers/UserMessages'
+require 'file_generators/JsonGenerator'
+require 'file_generators/XMLGenerator'
 
 input_file = ARGV[0]
 desired_format = ARGV[1]
 
 if input_file.nil? || desired_format.nil?
-  puts "usage: convert_to_json.rb <file to convert>, <desired format>"
+  puts "#{UserMessages::GeneralMessages::USAGE}"
 else
 
   case desired_format
