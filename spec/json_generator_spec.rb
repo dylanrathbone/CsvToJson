@@ -1,9 +1,8 @@
 require 'spec_helper'
-require 'FileTransformer'
+require 'file_generators/JsonGenerator'
 require 'stringio'
-require 'csv'
 
-describe FileTransformer do
+describe JsonGenerator do
 
   before do
     $stdout = StringIO.new
@@ -15,24 +14,25 @@ describe FileTransformer do
 
   context 'valid file' do
 
-    before(:each) do
-      FileTransformer.new 'test_data.csv'
-    end
+    let(:json_generator) { JsonGenerator.new('test_data.csv') }
 
     it 'should notify the user that the file has been read in' do
+      json_generator.transform_file
       expect($stdout.string).to match("Loading file test_data.csv...")
     end
 
     it 'should notify the user when a valid file name has been provided' do
+      json_generator.transform_file
       expect($stdout.string).to match("File loaded successfully")
     end
 
     it 'should convert the csv to JSON' do
-      json_generator = FileTransformer.new 'test_data.csv'
+      json_generator.transform_file
       expect(json_generator.generated_json).to eq("[\n  {\n    \"item_id\": 111010,\n    \"description\": \"Coffee\",\n    \"price\": \"$1.25\"\n  }\n]")
     end
 
     it 'should notify the user that the conversion is complete' do
+      json_generator.transform_file
       expect($stdout.string).to match("JSON document successfully generated from file test_data.csv")
     end
 
@@ -41,17 +41,20 @@ describe FileTransformer do
   context 'invalid file' do
 
     it 'should notify the user when a file name without the ".csv" extension has been provided' do
-      FileTransformer.new 'invalid_file_name'
+      json_generator = JsonGenerator.new('test_data')
+      json_generator.transform_file
       expect($stdout.string).to match("Filename entered is not of a valid")
     end
 
     it 'should notify the user when a file name has not been provided' do
-      FileTransformer.new ''
+      json_generator = JsonGenerator.new('test_data')
+      json_generator.transform_file
       expect($stdout.string).to match("Filename entered is not of a valid")
     end
 
     it 'should notify the user if the file specified does not exist' do
-      FileTransformer.new 'dylan.csv'
+      json_generator = JsonGenerator.new('dylan.csv')
+      json_generator.transform_file
       expect($stdout.string).to match("File specified does not exist")
     end
 

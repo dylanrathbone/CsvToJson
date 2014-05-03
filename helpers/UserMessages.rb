@@ -2,7 +2,7 @@ module UserMessages
 
   module ErrorMessages
     FILE_DOES_NOT_EXIST = 'File specified does not exist'
-    INVALID_FILE_FORMAT = 'Filename entered is not of a valid'
+    INVALID_FILE_FORMAT = 'Filename entered is not of a valid type'
   end
 
   module GeneralMessages

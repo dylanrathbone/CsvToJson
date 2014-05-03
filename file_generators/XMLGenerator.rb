@@ -1,7 +1,9 @@
-require 'csv'
+require 'helpers/file_helper'
 require 'helpers/UserMessages'
 
 class XMLGenerator
+
+  include FileHelper
 
   attr_accessor :file_name
 
@@ -10,7 +12,11 @@ class XMLGenerator
   end
 
   def transform_file
-    puts "XML Data"
+    if valid_filename_format? and file_exists? then generate_xml end
+  end
+
+  def generate_xml
+    puts 'XML Data'
   end
 
 end
