@@ -14,7 +14,7 @@ class JsonGenerator
     @file_name = filename
   end
 
-  def generate
+  def transform_file
     if valid_filename_format? and file_exists? then load_file and generate_json end
   end
 

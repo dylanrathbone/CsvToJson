@@ -3,15 +3,15 @@ require 'helpers/UserMessages'
 
 class FileTransformer
 
-  attr_accessor :format
+  attr_accessor :generator
 
-  def initialize(format)
-    @format = format
+  def initialize(generator)
+    @generator = generator
     transform
   end
 
   def transform
-    @format.generate
+    @generator.transform_file
   end
 
 end

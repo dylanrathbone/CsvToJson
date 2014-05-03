@@ -9,7 +9,7 @@ class XMLGenerator
     @file_name = filename
   end
 
-  def generate
+  def transform_file
     puts "XML Data"
   end
 
