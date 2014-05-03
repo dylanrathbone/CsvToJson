@@ -1,5 +1,4 @@
 require 'csv'
-require 'helpers/UserMessages'
 
 class FileTransformer
 

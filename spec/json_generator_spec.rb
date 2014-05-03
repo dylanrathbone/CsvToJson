@@ -38,13 +38,13 @@ describe JsonGenerator do
     it 'should notify the user when a file name without the ".csv" extension has been provided' do
       json_generator = JsonGenerator.new('test_data')
       json_generator.transform_file
-      expect($stdout.string).to match("Filename entered is not of a valid")
+      expect($stdout.string).to match("Filename entered is not of a valid type")
     end
 
     it 'should notify the user when a file name has not been provided' do
-      json_generator = JsonGenerator.new('test_data')
+      json_generator = JsonGenerator.new('')
       json_generator.transform_file
-      expect($stdout.string).to match("Filename entered is not of a valid")
+      expect($stdout.string).to match("Filename entered is not of a valid type")
     end
 
     it 'should notify the user if the file specified does not exist' do
