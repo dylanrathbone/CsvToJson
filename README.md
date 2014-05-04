@@ -12,11 +12,22 @@ Assumptions
 <li>Files to be converted will always be in .csv format</li>
 <li>The converted target format is currently JSON, however, the tool has been coded in such a way so that it can be easily updated for alternative formats down the line</li>
 <li>Files to be converted will be approximately 1..50Mb in size</li>
-<li>The tool will be used used from the command line</li>
+<li>The tool will be used via the command line</li>
 </ul>
 
 Installation
 ------------
+
+<p>This tool was written using RVM and JRuby, therefore you will need to get both ;)</P
+
+<ul>
+<li>Get the RVM and JRuby
+<pre><code>\curl -sSL https://get.rvm.io | bash -s stable --ruby=jruby-1.7.9
+</code></pre>
+</li>
+</ul>
+
+
 
 Usage
 -----
