@@ -1,3 +1,5 @@
+{toc}
+
 CsvToJson
 =========
 
@@ -53,12 +55,12 @@ Usage
 
 <p>Below are some examples of using the tool from the command line</p>
 
-<h3>Json conversion example</h3>
+<h4>Json conversion example</h4>
 
 <pre><code>convert.rb stock_data.csv, json
 </code></pre>
 
-<h3>XML (simulated) conversion example</h3>
+<h4>XML (simulated) conversion example</h4>
 
 <pre><code>convert.rb stock_data.csv, xml
 </code></pre>
@@ -68,13 +70,13 @@ Usage
 Tests
 -----
 
-<h3>Run Acceptance tests</h3>
+<h4>Run Acceptance tests</h4>
 
 <pre><code>cucumber features/
 </code></pre>
 
 
-<h3>Run specs</h3>
+<h4>Run specs</h4>
 
 <pre><code>rspec spec/
 </code></pre>
