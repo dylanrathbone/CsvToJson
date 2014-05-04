@@ -98,6 +98,7 @@ Below are the steps required for incorporating a new file generator into the too
 
 
 <pre><code>
+```ruby
 require 'ApplicationHelper'
 
 class XMLGenerator
@@ -120,6 +121,7 @@ class XMLGenerator
   end
 
 end
+```
 </code></pre>
 </ul>
 
