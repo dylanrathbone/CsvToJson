@@ -91,7 +91,9 @@ has been provided to demonstrate this feature. Other generators, such as a YAMLG
 with minimal change.
 
 <ul>
-<li>Write your generator - Simulated XML generator</li>
+<li>Write your generator</li>
+
+Below is a simulated XML generator...
 
 <pre><code>
 require 'ApplicationHelper'
