@@ -45,25 +45,7 @@ cd CsvToJson
 </li>
 </ul>
 
-
-<p>Installation done!</p>
-
-Usage
------
-
-<p>Below are some examples of using the tool from the command line</p>
-
-<h4>Json conversion example</h4>
-
-<pre><code>convert.rb stock_data.csv, json
-</code></pre>
-
-<h4>XML (simulated) conversion example</h4>
-
-<pre><code>convert.rb stock_data.csv, xml
-</code></pre>
-
-
+<p>Installation complete!</p>
 
 Tests
 -----
@@ -79,7 +61,20 @@ Tests
 <pre><code>rspec spec/
 </code></pre>
 
+Usage
+-----
 
+<p>Below are some examples of using the tool from the command line</p>
+
+<h4>Json conversion example</h4>
+
+<pre><code>jruby convert.rb stock_data.csv json
+</code></pre>
+
+<h4>XML (simulated) conversion example</h4>
+
+<pre><code>jruby convert.rb stock_data.csv xml
+</code></pre>
 
 Development
 ------------
