@@ -1,4 +1,15 @@
 CsvToJson
 =========
 
-Jruby project for converting a csv file to json
+CsvToJson is a Jruby command line tool for converting a csv file to json.
+
+Installation
+============
+
+Usage
+=====
+
+Development
+===========
+
+
