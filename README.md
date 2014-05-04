@@ -86,8 +86,8 @@ Development
 
 CsvToJson was coded using the BDD paradigm. Feature tests and rspec's have been included with the source which can be run to validate the code.
 
-The tool has been written with extensibility in mind. The application can be injected with new file generators to accommodate any need. The XMLGenerator.rb
-has been provided to demonstrate this feature. Other generators, such as a YAMLGenerator, could just as easily be built and plugged into the tool via the convert.rb ruby script
+The tool has been written with extensibility in mind. The application can be injected with new file generators to accommodate any need. The `XMLGenerator.rb`
+has been provided to demonstrate this feature. Other generators, such as a `YAMLGenerator.rb`, could just as easily be built and plugged into the tool via the `convert.rb` ruby script
 with minimal change.
 
 Below are the steps required for incorporating a new file generator into the tool:
