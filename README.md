@@ -40,7 +40,7 @@ cd CsvToJson
 </code></pre>
 </li>
 <li>set default gemset
-<pre><code>rvm default jruby-1.7.9@global
+<pre><code>rvm default jruby-1.7.9
 </code></pre>
 </li>
 </ul>
