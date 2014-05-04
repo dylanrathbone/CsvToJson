@@ -39,7 +39,13 @@ cd CsvToJson
 <pre><code>bundle install
 </code></pre>
 </li>
+<li>set default gemset
+<pre><code>rvm default jruby-1.7.9@global
+</code></pre>
+</li>
 </ul>
+
+
 
 
 
