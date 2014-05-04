@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'file_generators/JsonGenerator'
 require 'stringio'
 
 describe JsonGenerator do

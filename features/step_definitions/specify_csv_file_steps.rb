@@ -1,5 +1,5 @@
 require 'FileTransformer'
-require 'file_generators/JsonGenerator'
+require 'ApplicationHelper'
 require 'stringio'
 
 

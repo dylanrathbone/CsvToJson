@@ -1,9 +1,7 @@
 #!/usr/bin/ruby
 
 require 'FileTransformer'
-require 'helpers/UserMessages'
-require 'file_generators/JsonGenerator'
-require 'file_generators/XMLGenerator'
+require 'ApplicationHelper'
 
 input_file = ARGV[0]
 desired_format = ARGV[1]
