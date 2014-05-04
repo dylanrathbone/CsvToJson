@@ -5,10 +5,10 @@ Feature: convert csv to JSON
 
   The tool should also provide some level of validation to ensure that the csv file is of a valid format.
 
-  Scenario: A user provides a valid .csv file which is processed successfully
-    Given a valid "csv file"
+  Scenario: A user provides a small valid .csv file which is processed successfully
+    Given a the valid csv file "test_data.csv"
     Then the user should receive the message "JSON document successfully generated from file"
-    And standard output should display the valid json:
+    And standard output for the test data should display the valid json:
     """
     [
       {

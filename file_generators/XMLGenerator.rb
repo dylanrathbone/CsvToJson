@@ -16,7 +16,7 @@ class XMLGenerator
 
   private
   def generate_xml
-    puts 'XML Data'
+    puts 'Pending implementation.. XML Data would be printed here...'
   end
 
 end
