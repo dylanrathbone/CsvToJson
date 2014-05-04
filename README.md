@@ -1,5 +1,3 @@
-{toc}
-
 CsvToJson
 =========
 
@@ -17,8 +15,8 @@ Assumptions
 <li>The tool will be used via the command line</li>
 </ul>
 
-Installation
-------------
+Installation from source
+------------------------
 
 <p>This tool was written using RVM and JRuby, therefore you will need to get both ;)</p>
 
@@ -86,6 +84,63 @@ Tests
 Development
 ------------
 
-CsvToJson was coded
+CsvToJson was coded using the BDD paradigm. Feature tests and rspec's have been included with the source which can be run to validate the code.
+
+The tool has been written with extensibility in mind. The application can be injected with new file generators to accommodate any need. The XMLGenerator.rb
+has been provided to demonstrate this feature. Other generators, such as a YAMLGenerator, could just as easily be built and plugged into the tool via the convert.rb ruby script
+with minimal change.
+
+<ul>
+<li>Write your generator - Simulated XML generator</li>
+
+<pre><code>
+require 'ApplicationHelper'
+
+class XMLGenerator
+
+  include FileHelper
+
+  attr_accessor :file_name
+
+  def initialize(filename)
+    @file_name = filename
+  end
+
+  def transform_file
+    if valid_filename_format? and file_exists? then generate_xml end
+  end
+
+  private
+  def generate_xml
+    puts 'Pending implementation.. XML Data would be printed here...'
+  end
+
+end
+</code></pre>
+
+<li>Wire it up</li>
+
+Update the case statement within the convert.rb script to include your new generator...
+
+<pre><code>
+...
+case desired_format
+    when 'json'
+      FileTransformer.new(JsonGenerator.new(input_file))
+    when 'xml'
+      FileTransformer.new(XMLGenerator.new(input_file))
+    else
+      puts "#{UserMessages::GeneralMessages::VALID_FILE_FORMAT}"
+  end
+...
+</code></pre>
+
+<li>Run tool</li>
+
+<pre><code>
+convert.rb stock_data.csv, xml
+</code></pre>
+
+</ul>
 
 
