@@ -16,7 +16,7 @@ Assumptions
 </ul>
 
 Installation from source
-------------------------
+-------------------------
 
 <p>This tool was written using RVM and JRuby, therefore you will need to get both</p>
 
