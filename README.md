@@ -130,13 +130,13 @@ end
 <pre><code>
 ...
 case desired_format
-    when 'json'
-      FileTransformer.new(JsonGenerator.new(input_file))
-    when 'xml'
-      FileTransformer.new(XMLGenerator.new(input_file))
-    else
-      puts "#{UserMessages::GeneralMessages::VALID_FILE_FORMAT}"
-  end
+  when 'json'
+    FileTransformer.new(JsonGenerator.new(input_file))
+  when 'xml'
+    FileTransformer.new(XMLGenerator.new(input_file))
+  else
+    puts "#{UserMessages::GeneralMessages::VALID_FILE_FORMAT}"
+end
 ...
 </code></pre>
 </ul>
