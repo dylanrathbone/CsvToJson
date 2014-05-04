@@ -1,4 +1,4 @@
-require 'helpers/FileHelper'
+require 'ApplicationHelper'
 
 class XMLGenerator
 

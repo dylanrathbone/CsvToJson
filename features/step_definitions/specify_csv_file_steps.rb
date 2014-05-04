@@ -1,10 +1,14 @@
 require 'FileTransformer'
 require 'stringio'
 
-When(/^I provide a "(.*?)" file I should receive a file "(.*?)"$/) do |arg1, arg2|
+Given(/^a valid "(.*?)"$/) do |arg1|
   pending # express the regexp above with the code you wish you had
 end
 
-Then(/^the file should be converted to JSON and I should be displayed the "(.*?)"$/) do |arg1|
+Then(/^the user should receive the message "(.*?)"$/) do |arg1|
+  pending # express the regexp above with the code you wish you had
+end
+
+And(/^standard output should display the valid json:$/) do |string|
   pending # express the regexp above with the code you wish you had
 end

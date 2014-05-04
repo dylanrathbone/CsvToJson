@@ -1,0 +1,1 @@
+Dir["helpers/*.rb"].each {|file| require file }

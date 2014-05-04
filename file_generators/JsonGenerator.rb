@@ -1,5 +1,4 @@
-require 'helpers/FileHelper'
-require 'helpers/UserMessages'
+require 'ApplicationHelper'
 require 'json'
 
 class JsonGenerator
