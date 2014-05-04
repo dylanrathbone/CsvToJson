@@ -29,6 +29,15 @@ Installation
 <pre><code>git clone git://github.com/dylanrathbone/CsvToJson.git
 cd CsvToJson
 </code></pre>
+<li>To start using RVM you need to run
+<pre><code>source source ~/.rvm/scripts/rvm
+</code></pre>
+<li>Install bundler
+<pre><code>gem install bundle
+</code></pre>
+<li>Install gemset
+<pre><code>bundle install
+</code></pre>
 </li>
 </ul>
 
