@@ -90,6 +90,8 @@ The tool has been written with extensibility in mind. The application can be inj
 has been provided to demonstrate this feature. Other generators, such as a YAMLGenerator, could just as easily be built and plugged into the tool via the convert.rb ruby script
 with minimal change.
 
+Below are the steps required for incorporating a new file generator into the tool:
+
 <ul>
 <li>Write your generator, below is a simulated XML generator...
 </li>
