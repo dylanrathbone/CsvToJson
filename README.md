@@ -45,14 +45,32 @@ cd CsvToJson
 </li>
 </ul>
 
+
 <p>Installation done!</p>
-
-
-
-
 
 Usage
 -----
+
+<p>From the command line run</p>
+
+<ul>
+<li>Run...
+<pre><code>convert.rb <file_to_convert>, <desired file format>
+</code></pre>
+</li>
+</ul>
+
+<p>Json conversion example</p>
+
+<pre><code>convert.rb stock_data.csv, json
+</code></pre>
+
+<p>XML (simulated) conversion example</p>
+
+<pre><code>convert.rb stock_data.csv, xml
+</code></pre>
+
+
 
 Development
 ------------
