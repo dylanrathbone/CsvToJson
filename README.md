@@ -25,6 +25,11 @@ Installation
 <pre><code>\curl -sSL https://get.rvm.io | bash -s stable --ruby=jruby-1.7.9
 </code></pre>
 </li>
+<li>Get the source
+<pre><code>git clone git://github.com/dylanrathbone/CsvToJson.git
+           cd money
+</code></pre>
+</li>
 </ul>
 
 
