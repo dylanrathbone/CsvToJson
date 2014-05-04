@@ -121,8 +121,11 @@ class XMLGenerator
 
 end
 </code></pre>
+</ul>
 
-<li>Wire it up. Update the case statement within the convert.rb script to include your new generator...</li>
+<ul>
+<li>Wire it up. Update the case statement within the convert.rb script to include your new generator...
+</li>
 
 <pre><code>
 ...
@@ -136,8 +139,11 @@ case desired_format
   end
 ...
 </code></pre>
+</ul>
 
-<li>Run tool</li>
+<il>
+<li>Run tool
+</li>
 
 <pre><code>
 convert.rb stock_data.csv, xml
