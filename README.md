@@ -48,13 +48,10 @@ cd CsvToJson
 
 <p>Installation done!</p>
 
-Basic Usage
------------
+Usage
+-----
 
-<p>From the command line run..</p>
-
-<pre><code>convert.rb \<\file_to_convert\>\, \<\desired file format\>\
-</code></pre>
+<p>Below are some examples of using the tool from the command line</p>
 
 Json conversion example
 -----------------------
