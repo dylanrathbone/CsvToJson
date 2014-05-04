@@ -18,7 +18,7 @@ Assumptions
 Installation
 ------------
 
-<p>This tool was written using RVM and JRuby, therefore you will need to get both ;)</P
+<p>This tool was written using RVM and JRuby, therefore you will need to get both ;)</p>
 
 <ul>
 <li>Get the RVM and JRuby
