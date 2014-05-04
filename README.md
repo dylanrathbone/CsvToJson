@@ -27,7 +27,7 @@ Installation
 </li>
 <li>Get the source
 <pre><code>git clone git://github.com/dylanrathbone/CsvToJson.git
-           cd money
+cd CsvToJson
 </code></pre>
 </li>
 </ul>
