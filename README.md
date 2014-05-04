@@ -1,7 +1,7 @@
 CsvToJson
 =========
 
-CsvToJson is a Jruby command line tool for converting a csv file to json.
+CsvToJson is a Jruby command line tool for converting a csv file to JSON.
 
 Assumptions
 -----------
@@ -66,7 +66,7 @@ Usage
 
 <p>Below are some examples of using the tool from the command line</p>
 
-<h4>Json conversion example</h4>
+<h4>JSON conversion example</h4>
 
 <pre><code>jruby convert.rb stock_data.csv json
 </code></pre>
@@ -119,7 +119,7 @@ end
 </ul>
 
 <ul>
-<li>Wire it up. Update the case statement within the convert.rb script to include your new generator
+<li>Wire it up. Update the case statement within the `convert.rb` script to include your new generator
 </li>
 
 <pre><code>
