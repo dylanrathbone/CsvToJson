@@ -10,7 +10,7 @@ Assumptions
 
 <ul>
 <li>Files to be converted will always be in .csv format</li>
-<li>The converted target format is currently JSON, however, the tool has been coded in such a way so that it can be easily updated for alternative formats down the line</li>
+<li>The converted target format is currently JSON, however, the tool has been coded in such a way that it can be easily updated for alternative formats down the line</li>
 <li>Files to be converted will be approximately 1..50Mb in size</li>
 <li>The tool will be used via the command line</li>
 </ul>
@@ -18,7 +18,7 @@ Assumptions
 Installation from source
 ------------------------
 
-<p>This tool was written using RVM and JRuby, therefore you will need to get both ;)</p>
+<p>This tool was written using RVM and JRuby, therefore you will need to get both</p>
 
 <ul>
 <li>Get the RVM and JRuby
@@ -93,7 +93,7 @@ with minimal change.
 Below are the steps required for incorporating a new file generator into the tool:
 
 <ul>
-<li>Write your generator, below is a simulated XML generator...
+<li>Write your generator, below is a simulated XML generator
 </li>
 
 
@@ -116,7 +116,7 @@ class XMLGenerator
 
   private
   def generate_xml
-    puts 'Pending implementation.. XML Data would be printed here...'
+    puts 'Pending implementation.. XML Data would be printed here'
   end
 
 end
@@ -124,7 +124,7 @@ end
 </ul>
 
 <ul>
-<li>Wire it up. Update the case statement within the convert.rb script to include your new generator...
+<li>Wire it up. Update the case statement within the convert.rb script to include your new generator
 </li>
 
 <pre><code>
