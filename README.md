@@ -53,21 +53,26 @@ Usage
 
 <p>Below are some examples of using the tool from the command line</p>
 
-Json conversion example
------------------------
+<h3>Json conversion example</h3>
 
 <pre><code>convert.rb stock_data.csv, json
 </code></pre>
 
 XML (simulated) conversion example
-----------------------------------
 
 <pre><code>convert.rb stock_data.csv, xml
 </code></pre>
 
 
+Tests
+-----
+
+
+
 
 Development
 ------------
+
+CsvToJson was coded
 
 
