@@ -53,7 +53,7 @@ Basic Usage
 
 <p>From the command line run..</p>
 
-<pre><code>convert.rb \<file_to_convert\>, \<desired file format\>
+<pre><code>convert.rb \<\file_to_convert\>\, \<\desired file format\>\
 </code></pre>
 
 Json conversion example
