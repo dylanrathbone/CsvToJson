@@ -96,7 +96,8 @@ Below are the steps required for incorporating a new file generator into the too
 <li>Write your generator, below is a simulated XML generator
 </li>
 
-```ruby
+
+<pre><code>
 require 'ApplicationHelper'
 
 class XMLGenerator
@@ -119,7 +120,7 @@ class XMLGenerator
   end
 
 end
-```
+</code></pre>
 </ul>
 
 <ul>
