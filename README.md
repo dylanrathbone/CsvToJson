@@ -30,7 +30,7 @@ Installation from source
 cd CsvToJson
 </code></pre>
 <li>To start using RVM you need to run
-<pre><code>source source ~/.rvm/scripts/rvm
+<pre><code>source ~/.rvm/scripts/rvm
 </code></pre>
 <li>set default gemset
 <pre><code>rvm default jruby-1.7.9
