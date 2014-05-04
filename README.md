@@ -68,6 +68,16 @@ Usage
 Tests
 -----
 
+<h3>Run Acceptance tests</h3>
+
+<pre><code>cucumber features/
+</code></pre>
+
+
+<h3>Run specs</h3>
+
+<pre><code>rspec spec/
+</code></pre>
 
 
 
