@@ -58,7 +58,7 @@ Usage
 <pre><code>convert.rb stock_data.csv, json
 </code></pre>
 
-XML (simulated) conversion example
+<h3>XML (simulated) conversion example</h3>
 
 <pre><code>convert.rb stock_data.csv, xml
 </code></pre>
