@@ -122,9 +122,7 @@ class XMLGenerator
 end
 </code></pre>
 
-<li>Wire it up</li>
-
-Update the case statement within the convert.rb script to include your new generator...
+<li>Wire it up. Update the case statement within the convert.rb script to include your new generator...</li>
 
 <pre><code>
 ...
