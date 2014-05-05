@@ -95,7 +95,9 @@ Pending implementation.. XML Data would be printed here...</code></pre>
 Installation from source
 -------------------------
 
-<p>This tool was written using JRuby and Bundler managed with RVM, therefore you will need to get all three</p>
+<p>This tool was written using JRuby and Bundler managed with RVM, therefore you will need to get all three
+
+</p>
 
 <ul>
 <li>RVM requires homebrew so get that if not already installed
@@ -120,7 +122,7 @@ cd CsvToJson
 <li>Install bundler
 <pre><code>gem install bundle
 </code></pre>
-<li>Install bundle
+<li>Install Gemfile bundle
 <pre><code>bundle install
 </code></pre>
 </li>
