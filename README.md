@@ -64,7 +64,7 @@ Tests
 Usage
 -----
 
-<p>CsvJson usage is of the form</p>
+<p>CsvToJson usage is of the form</p>
 
 <pre><code>convert.rb &lt;file_to_convert&gt;, &lt;desired_file_format&gt;
 </code></pre>
