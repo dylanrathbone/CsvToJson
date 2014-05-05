@@ -13,7 +13,7 @@ Assumptions
 <li>The converted target format is currently JSON, however, the tool has been coded in such a way that it can be easily updated for alternative formats down the line</li>
 <li>Files to be converted will be approximately 1..50Mb in size</li>
 <li>The tool will be used via the command line on a *NIX or MacOS* based OS</li>
-<li>The tool will send its generated output to &#96;stdout&#96;</li>
+<li>The tool will send its generated output to stdout</li>
 </ul>
 
 Installation from source
