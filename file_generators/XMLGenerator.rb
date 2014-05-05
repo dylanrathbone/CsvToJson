@@ -5,6 +5,7 @@ class XMLGenerator
   include FileHelper
 
   attr_accessor :file_name
+  attr_accessor :generated_xml
 
   def initialize(filename)
     @file_name = filename
@@ -16,7 +17,8 @@ class XMLGenerator
 
   private
   def generate_xml
-    puts 'Pending implementation.. XML Data would be printed here...'
+    @generated_xml = 'Pending implementation.. XML Data would be printed here...'
+    puts "#{@generated_xml}"
   end
 
 end

@@ -76,7 +76,7 @@ Usage
 
 <h4>JSON conversion example</h4>
 
-<pre><code>jruby convert.rb stock_data.csv json
+<pre><code>jruby convert.rb single_stock_item.csv json
 </code></pre>
 
 The output of which will be
@@ -105,7 +105,7 @@ JSON document successfully generated from file single_stock_item.csv
 
 <h4>XML (simulated) conversion example</h4>
 
-<pre><code>jruby convert.rb stock_data.csv xml
+<pre><code>jruby convert.rb single_stock_item.csv xml
 </code></pre>
 
 The output of which will be
