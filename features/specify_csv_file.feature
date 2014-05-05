@@ -224,10 +224,14 @@ Feature: convert csv to JSON
     ]
     """
 
-  Scenario: A user provides an invalid file for transformation
+  Scenario: A user provides an invalid file for JSON transformation
     Given the invalid csv file "test_data"
     Then the user should receive the message "Filename entered is not of a valid type"
 
-  Scenario: A user provides a file for transformation that does not exist
+  Scenario: A user provides a file for JSON transformation that does not exist
     Given the invalid csv file "non_existent.csv"
+    Then the user should receive the message "File specified does not exist"
+
+  Scenario: A user does not provide a file for JSON transformation
+    Given the invalid csv file ""
     Then the user should receive the message "File specified does not exist"

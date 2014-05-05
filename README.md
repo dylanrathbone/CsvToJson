@@ -98,6 +98,10 @@ Installation from source
 <p>This tool was written using RVM and JRuby, therefore you will need to get both</p>
 
 <ul>
+<li>RVM requires homebrew so get that if not already installed
+<pre><code>ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+</code></pre>
+</li>
 <li>Get the RVM and JRuby
 <pre><code>\curl -sSL https://get.rvm.io | bash -s stable --ruby=jruby-1.7.9
 </code></pre>
