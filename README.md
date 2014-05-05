@@ -67,7 +67,7 @@ Tests
 Usage
 -----
 
-<p>CsvToJson usage is of the form</p>
+<p>CsvToJson usage is of the form:</p>
 
 <pre><code>jruby convert.rb &lt;file_to_convert&gt;, &lt;desired_file_format&gt;
 </code></pre>
@@ -79,7 +79,7 @@ Usage
 <pre><code>jruby convert.rb single_stock_item.csv json
 </code></pre>
 
-The output of which will be
+The output of which will be:
 
 <pre><code>
 Loading file single_stock_item.csv...
@@ -108,7 +108,7 @@ JSON document successfully generated from file single_stock_item.csv
 <pre><code>jruby convert.rb single_stock_item.csv xml
 </code></pre>
 
-The output of which will be
+The output of which will be:
 <pre><code>
 Pending implementation.. XML Data would be printed here...
 </code></pre>
