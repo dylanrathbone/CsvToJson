@@ -66,7 +66,7 @@ Usage
 
 <p>CsvJson usage is of the form</p>
 
-<pre><code>usage: convert.rb &ltfile_to_convert&gt, &ltdesired file format&gt
+<pre><code>convert.rb &lt;file_to_convert&gt;, &lt;desired file format&gt;
 </code></pre>
 
 <p>Below are some examples of using the tool from the command line</p>
