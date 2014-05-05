@@ -16,6 +16,82 @@ Assumptions
 <li>The tool will send its generated output to stdout</li>
 </ul>
 
+Development
+------------
+
+CsvToJson was coded using the BDD paradigm. Feature tests and rspec's have been included with the source which can be run to validate the code.
+
+The tool has been written with extensibility in mind. The application can be injected with new file generators to accommodate any need. The `XMLGenerator.rb`
+has been provided to demonstrate this feature. Other generators, such as a `YAMLGenerator.rb`, could just as easily be built and plugged into the tool via the `convert.rb` ruby script
+with minimal change.
+
+Below are the steps required for incorporating a new file generator into the tool:
+
+<ul>
+<li>Write your generator, below is a simulated XML generator
+</li>
+
+
+<pre><code>
+require 'ApplicationHelper'
+
+class XMLGenerator
+
+  include FileHelper
+
+  attr_accessor :file_name
+
+  def initialize(filename)
+    @file_name = filename
+  end
+
+  def transform_file
+    if valid_filename_format? and file_exists? then generate_xml end
+  end
+
+  private
+  def generate_xml
+    puts 'Pending implementation.. XML Data would be printed here'
+  end
+
+end
+</code></pre>
+</ul>
+
+<ul>
+<li>Wire it up. Update the case statement within the convert.rb script to include your new generator
+</li>
+
+<pre><code>
+...
+case desired_format
+  when 'json'
+    FileTransformer.new(JsonGenerator.new(input_file))
+  when 'xml'
+    FileTransformer.new(XMLGenerator.new(input_file))
+  else
+    puts "#{UserMessages::GeneralMessages::VALID_FILE_FORMAT}"
+end
+...
+</code></pre>
+</ul>
+
+<ul>
+<li>Run tool
+</li>
+
+<pre><code>
+convert.rb stock_data.csv, xml
+</code></pre>
+
+<ul>
+<li>output should be a simulated representation of XML i.e.
+</li>
+
+<pre><code>
+Pending implementation.. XML Data would be printed here...</code></pre>
+</ul>
+
 Installation from source
 -------------------------
 
@@ -112,82 +188,3 @@ The output of which will be:
 <pre><code>
 Pending implementation.. XML Data would be printed here...
 </code></pre>
-
-
-Development
-------------
-
-CsvToJson was coded using the BDD paradigm. Feature tests and rspec's have been included with the source which can be run to validate the code.
-
-The tool has been written with extensibility in mind. The application can be injected with new file generators to accommodate any need. The `XMLGenerator.rb`
-has been provided to demonstrate this feature. Other generators, such as a `YAMLGenerator.rb`, could just as easily be built and plugged into the tool via the `convert.rb` ruby script
-with minimal change.
-
-Below are the steps required for incorporating a new file generator into the tool:
-
-<ul>
-<li>Write your generator, below is a simulated XML generator
-</li>
-
-
-<pre><code>
-require 'ApplicationHelper'
-
-class XMLGenerator
-
-  include FileHelper
-
-  attr_accessor :file_name
-
-  def initialize(filename)
-    @file_name = filename
-  end
-
-  def transform_file
-    if valid_filename_format? and file_exists? then generate_xml end
-  end
-
-  private
-  def generate_xml
-    puts 'Pending implementation.. XML Data would be printed here'
-  end
-
-end
-</code></pre>
-</ul>
-
-<ul>
-<li>Wire it up. Update the case statement within the convert.rb script to include your new generator
-</li>
-
-<pre><code>
-...
-case desired_format
-  when 'json'
-    FileTransformer.new(JsonGenerator.new(input_file))
-  when 'xml'
-    FileTransformer.new(XMLGenerator.new(input_file))
-  else
-    puts "#{UserMessages::GeneralMessages::VALID_FILE_FORMAT}"
-end
-...
-</code></pre>
-</ul>
-
-<ul>
-<li>Run tool
-</li>
-
-<pre><code>
-convert.rb stock_data.csv, xml
-</code></pre>
-
-<ul>
-<li>output should be a simulated representation of XML i.e.
-</li>
-
-<pre><code>
-Pending implementation.. XML Data would be printed here...</code></pre>
-</ul>
-
-
