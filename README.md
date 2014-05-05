@@ -76,6 +76,30 @@ Usage
 <pre><code>jruby convert.rb stock_data.csv json
 </code></pre>
 
+The output of which will be
+
+<pre><code>
+Loading file single_stock_item.csv...
+JSON document successfully generated from file single_stock_item.csv
+
+[
+  {
+    "item_id": 111010,
+    "description": "Coffee",
+    "price": "$1.25",
+    "cost": "$0.80",
+    "price_type": "system",
+    "quantity_on_hand": 100000,
+    "modifier_1_name": "Small",
+    "modifier_1_price": "-$0.25",
+    "modifier_2_name": "Medium",
+    "modifier_2_price": "$0.00",
+    "modifier_3_name": "Large",
+    "modifier_3_price": "$0.30"
+  }
+]
+</code></pre>
+
 <h4>XML (simulated) conversion example</h4>
 
 <pre><code>jruby convert.rb stock_data.csv xml
@@ -149,6 +173,12 @@ end
 convert.rb stock_data.csv, xml
 </code></pre>
 
+<ul>
+<li>output should be a simulated representation of XML i.e.
+</li>
+
+<pre><code>
+Pending implementation.. XML Data would be printed here...</code></pre>
 </ul>
 
 
