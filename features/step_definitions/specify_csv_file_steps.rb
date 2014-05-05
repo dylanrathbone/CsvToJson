@@ -22,7 +22,6 @@ And(/^standard output for the stock data should display the valid json:$/) do |j
   reset_standard_out
 end
 
-
 def set_standard_out
   $stdout = StringIO.new
 end
@@ -30,5 +29,4 @@ end
 def reset_standard_out
   $stdout = STDOUT
 end
-
 
