@@ -112,7 +112,7 @@ The output of which will be
 
 <pre><code>
 Pending implementation.. XML Data would be printed here...
-</pre><code>
+</pre></code>
 
 Development
 ------------
