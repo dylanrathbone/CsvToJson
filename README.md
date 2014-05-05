@@ -116,7 +116,7 @@ cd CsvToJson
 <li>Install bundler
 <pre><code>gem install bundle
 </code></pre>
-<li>Install gemset
+<li>Install bundle
 <pre><code>bundle install
 </code></pre>
 </li>
