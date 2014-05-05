@@ -85,7 +85,7 @@ convert.rb stock_data.csv, xml
 </code></pre>
 
 <ul>
-<li>output should be a simulated representation of XML i.e.
+<li>output will be a simulated representation of XML i.e.
 </li>
 
 <pre><code>
