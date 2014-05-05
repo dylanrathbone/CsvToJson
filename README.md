@@ -100,7 +100,7 @@ Installation from source
 </p>
 
 <ul>
-<li>RVM requires homebrew so get that if not already installed
+<li>If on a MAC RVM requires homebrew so get that if not already installed
 <pre><code>ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 </code></pre>
 </li>

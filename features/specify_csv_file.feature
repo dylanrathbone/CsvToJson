@@ -6,9 +6,9 @@ Feature: convert csv to JSON
   The tool should also provide some level of validation to ensure that the csv file is of a valid format.
 
   Scenario: A user provides a small .csv file containing stock data which is processed successfully
-    Given a the valid csv file "test_data.csv"
+    Given the valid csv file "test_data.csv"
     Then the user should receive the message "JSON document successfully generated from file"
-    And standard output for the stock data should display the valid json:
+    And standard output should display the valid json for the stock data:
     """
     [
       {
@@ -20,9 +20,9 @@ Feature: convert csv to JSON
     """
 
   Scenario: A user provides a large .csv file containing stock data which is processed successfully
-    Given a the valid csv file "stock_data.csv"
+    Given the valid csv file "stock_data.csv"
     Then the user should receive the message "JSON document successfully generated from file"
-    And standard output for the stock data should display the valid json:
+    And standard output should display the valid json for the stock data:
     """
     [
       {
