@@ -111,8 +111,8 @@ JSON document successfully generated from file single_stock_item.csv
 The output of which will be
 
 <pre><code>
-Pending implementation XML Data would be printed here
-</pre></code>
+Pending implementation.. XML Data would be printed here...
+</code></pre>
 
 
 Development
