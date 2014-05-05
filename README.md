@@ -66,7 +66,7 @@ Usage
 
 <p>CsvToJson usage is of the form</p>
 
-<pre><code>convert.rb &lt;file_to_convert&gt;, &lt;desired_file_format&gt;
+<pre><code>jruby convert.rb &lt;file_to_convert&gt;, &lt;desired_file_format&gt;
 </code></pre>
 
 <p>Below are some examples of using the tool from the command line</p>
