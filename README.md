@@ -51,6 +51,8 @@ cd CsvToJson
 Tests
 -----
 
+<p>Ensure successfull installation by running the provided feature and unit tests</p>
+
 <h4>Run Acceptance tests</h4>
 
 <pre><code>cucumber features/
