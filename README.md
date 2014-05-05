@@ -64,6 +64,11 @@ Tests
 Usage
 -----
 
+<p>CsvJson usage is of the form</p>
+
+<pre><code>usage: convert.rb &ltfile_to_convert&gt, &ltdesired file format&gt
+</code></pre>
+
 <p>Below are some examples of using the tool from the command line</p>
 
 <h4>JSON conversion example</h4>
