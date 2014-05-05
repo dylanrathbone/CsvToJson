@@ -108,6 +108,12 @@ JSON document successfully generated from file single_stock_item.csv
 <pre><code>jruby convert.rb stock_data.csv xml
 </code></pre>
 
+The output of which will be
+
+<pre><code>
+Pending implementation.. XML Data would be printed here...
+</pre><code>
+
 Development
 ------------
 
