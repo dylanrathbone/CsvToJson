@@ -1,3 +1,3 @@
 require_relative '../FileTransformer'
-require_relative '../file_generators/JsonGenerator'
+Dir["file_generators/*.rb"].each {|file| require file }
 
