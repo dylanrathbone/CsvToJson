@@ -95,7 +95,7 @@ Pending implementation.. XML Data would be printed here...</code></pre>
 Installation from source
 -------------------------
 
-<p>This tool was written using RVM and JRuby, therefore you will need to get both</p>
+<p>This tool was written using JRuby and Bundler managed with RVM, therefore you will need to get all three</p>
 
 <ul>
 <li>RVM requires homebrew so get that if not already installed
