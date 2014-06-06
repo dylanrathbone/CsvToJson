@@ -6,17 +6,19 @@ require 'csv'
 require 'json'
 
 
-loaded_file = File.read('single_stock_item.csv')
+#loaded_file = File.read('single_stock_item.csv')
+loaded_file = File.read('stock_data.csv')
+
 #loaded_file = File.read('single_stock_item_with_missing_modifier_val.csv')
+#loaded_file = File.read('single_stock_item_with_no_modifiers.csv')
+
 
 csv = CSV.new(loaded_file, :headers => true, :header_converters => :symbol, :converters => :all)
-csv_as_array = csv.to_a
-csv_as_array_of_hashes = csv_as_array.map { |row|row.to_hash}
+csv_as_array_of_hashes = csv.to_a.map { |row|row.to_hash}
 first_hash_from_array = csv_as_array_of_hashes[0]
+
 modifiers_as_hash = Hash.new
 array_of_modifier_hashes = Array.new
-
-
 
 #Assumption 1: We will assume that the csv when generated will always have a modifier name/price pair. You can never
 #specify a modifier without having both
@@ -48,12 +50,16 @@ end
 
 generate_array_of_modifier_hashes(array_of_modifier_hashes, modifiers_as_hash)
 
-
 #delete modifier_elements from original array
 csv_as_array_of_hashes[0].delete_if{|key| key.to_s =~ /^modifier_/}
 
+#Convert to hash
+hash = Hash[*csv_as_array_of_hashes.flatten]
 
-generated_json = JSON.pretty_generate(csv_as_array_of_hashes << array_of_modifier_hashes)
+#Then add the modifiers hash to it
+hash[:modifiers] = array_of_modifier_hashes
+
+generated_json = JSON.pretty_generate(hash)
 puts "#{generated_json}"
 
 
