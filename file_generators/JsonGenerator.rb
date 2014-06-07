@@ -26,11 +26,11 @@ class JsonGenerator
     csv_as_array_of_hashes = load_file.to_a.map { |row| row.to_hash}
 
     csv_as_array_of_hashes.each_with_index {
-        |csv_array_element, current_index|
+        |current_csv_array_element, current_index|
 
         temporary_hash_array.push(csv_as_array_of_hashes[current_index])
 
-        array_of_modifiers = build_array_of_modifier_hashes_from(modifiers_as_hash_from(csv_array_element))
+        array_of_modifiers = build_array_of_modifier_hashes_from(modifiers_as_hash_from(current_csv_array_element))
 
         remove_modifiers_from(temporary_hash_array)
 

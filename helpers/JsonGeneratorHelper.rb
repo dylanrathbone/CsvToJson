@@ -1,5 +1,7 @@
 module JsonGeneratorHelper
 
+  ARRAY_INDEX = 0
+
   # We will assume that the csv file when generated
   # will always have a name/price pair for a modifier/s.
   # A modifier can never specify without both.
@@ -39,11 +41,11 @@ module JsonGeneratorHelper
   end
 
   def reset(temporary_array)
-    temporary_array.delete_at(0)
+    temporary_array.delete_at(ARRAY_INDEX)
   end
 
   def remove_modifiers_from(temporary_array)
-    temporary_array[0].delete_if { |key| key.to_s =~ /^modifier_/ }
+    temporary_array[ARRAY_INDEX].delete_if { |key| key.to_s =~ /^modifier_/ }
   end
 
 end
