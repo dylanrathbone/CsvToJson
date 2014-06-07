@@ -16,7 +16,7 @@ module JsonGeneratorHelper
   # We will assume each generated hash's in this method will
   # comprise of a respective name/price pair for each individual
   # modifier
-  def array_of_modifier_hashes(modifiers_as_hash)
+  def build_array_of_modifier_hashes_from(modifiers_as_hash)
     array_of_modifier_hashes = Array.new
     modifiers_as_hash.each { |key, value|
       modifier_id = key.to_s.split(/_/)[1]
@@ -31,7 +31,7 @@ module JsonGeneratorHelper
     return array_of_modifier_hashes
   end
 
-  def formatted_csv_row(array_of_modifiers, temporary_hash_array)
+  def build_formatted_csv_row_from(array_of_modifiers, temporary_hash_array)
     hash = Hash[*temporary_hash_array.flatten]
     hash[:modifiers] = array_of_modifiers
     reset(temporary_hash_array)

@@ -30,11 +30,11 @@ class JsonGenerator
 
         temporary_hash_array.push(csv_as_array_of_hashes[current_index])
 
-        array_of_modifiers = array_of_modifier_hashes(modifiers_as_hash_from(csv_array_element))
+        array_of_modifiers = build_array_of_modifier_hashes_from(modifiers_as_hash_from(csv_array_element))
 
         remove_modifiers_from(temporary_hash_array)
 
-        reformatted_csv_data[current_index] = formatted_csv_row(array_of_modifiers, temporary_hash_array)
+        reformatted_csv_data[current_index] = build_formatted_csv_row_from(array_of_modifiers, temporary_hash_array)
     }
 
     @generated_json = JSON.pretty_generate(reformatted_csv_data)
