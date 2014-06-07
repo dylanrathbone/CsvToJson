@@ -14,7 +14,38 @@ Feature: convert csv to JSON
       {
         "item_id": 111010,
         "description": "Coffee",
-        "price": "$1.25"
+        "price": "$1.25",
+        "cost": "$0.80",
+        "price_type": "system",
+        "quantity_on_hand": 100000,
+        "modifiers": [
+          {
+            "name": "Small",
+            "price": "-$0.25"
+          },
+          {
+            "name": "Medium",
+            "price": "$0.00"
+          },
+          {
+            "name": "Large",
+            "price": "$0.30"
+          }
+        ]
+      },
+      {
+        "item_id": 111011,
+        "description": "Latte",
+        "price": "$1.35",
+        "cost": "$0.80",
+        "price_type": "system",
+        "quantity_on_hand": 100000,
+        "modifiers": [
+          {
+            "name": "Medium",
+            "price": "$0.60"
+          }
+        ]
       }
     ]
     """
@@ -32,12 +63,20 @@ Feature: convert csv to JSON
         "cost": "$0.80",
         "price_type": "system",
         "quantity_on_hand": 100000,
-        "modifier_1_name": "Small",
-        "modifier_1_price": "-$0.25",
-        "modifier_2_name": "Medium",
-        "modifier_2_price": "$0.00",
-        "modifier_3_name": "Large",
-        "modifier_3_price": "$0.30"
+        "modifiers": [
+          {
+            "name": "Small",
+            "price": "-$0.25"
+          },
+          {
+            "name": "Medium",
+            "price": "$0.00"
+          },
+          {
+            "name": "Large",
+            "price": "$0.30"
+          }
+        ]
       },
       {
         "item_id": 111784,
@@ -46,12 +85,9 @@ Feature: convert csv to JSON
         "cost": null,
         "price_type": "open",
         "quantity_on_hand": null,
-        "modifier_1_name": null,
-        "modifier_1_price": null,
-        "modifier_2_name": null,
-        "modifier_2_price": null,
-        "modifier_3_name": null,
-        "modifier_3_price": null
+        "modifiers": [
+
+        ]
       },
       {
         "item_id": 111022,
@@ -60,12 +96,12 @@ Feature: convert csv to JSON
         "cost": "$2.00",
         "price_type": "system",
         "quantity_on_hand": 9855,
-        "modifier_1_name": "Cream Cheese",
-        "modifier_1_price": "$1.00",
-        "modifier_2_name": null,
-        "modifier_2_price": null,
-        "modifier_3_name": null,
-        "modifier_3_price": null
+        "modifiers": [
+          {
+            "name": "Cream Cheese",
+            "price": "$1.00"
+          }
+        ]
       },
       {
         "item_id": 2847224,
@@ -74,12 +110,20 @@ Feature: convert csv to JSON
         "cost": null,
         "price_type": "system",
         "quantity_on_hand": 0,
-        "modifier_1_name": "Small",
-        "modifier_1_price": "$0.00",
-        "modifier_2_name": "Medium",
-        "modifier_2_price": "$1.00",
-        "modifier_3_name": "Large",
-        "modifier_3_price": "$2.50"
+        "modifiers": [
+          {
+            "name": "Small",
+            "price": "$0.00"
+          },
+          {
+            "name": "Medium",
+            "price": "$1.00"
+          },
+          {
+            "name": "Large",
+            "price": "$2.50"
+          }
+        ]
       },
       {
         "item_id": 2847225,
@@ -88,12 +132,9 @@ Feature: convert csv to JSON
         "cost": 49,
         "price_type": "system",
         "quantity_on_hand": 510,
-        "modifier_1_name": null,
-        "modifier_1_price": null,
-        "modifier_2_name": null,
-        "modifier_2_price": null,
-        "modifier_3_name": null,
-        "modifier_3_price": null
+        "modifiers": [
+
+        ]
       },
       {
         "item_id": 2847226,
@@ -102,12 +143,9 @@ Feature: convert csv to JSON
         "cost": null,
         "price_type": "system",
         "quantity_on_hand": 0,
-        "modifier_1_name": null,
-        "modifier_1_price": null,
-        "modifier_2_name": null,
-        "modifier_2_price": null,
-        "modifier_3_name": null,
-        "modifier_3_price": null
+        "modifiers": [
+
+        ]
       },
       {
         "item_id": 2847227,
@@ -116,12 +154,9 @@ Feature: convert csv to JSON
         "cost": null,
         "price_type": "open",
         "quantity_on_hand": 0,
-        "modifier_1_name": null,
-        "modifier_1_price": null,
-        "modifier_2_name": null,
-        "modifier_2_price": null,
-        "modifier_3_name": null,
-        "modifier_3_price": null
+        "modifiers": [
+
+        ]
       },
       {
         "item_id": 2847228,
@@ -130,12 +165,9 @@ Feature: convert csv to JSON
         "cost": null,
         "price_type": "system",
         "quantity_on_hand": 0,
-        "modifier_1_name": null,
-        "modifier_1_price": null,
-        "modifier_2_name": null,
-        "modifier_2_price": null,
-        "modifier_3_name": null,
-        "modifier_3_price": null
+        "modifiers": [
+
+        ]
       },
       {
         "item_id": 2847244,
@@ -144,12 +176,9 @@ Feature: convert csv to JSON
         "cost": null,
         "price_type": "open",
         "quantity_on_hand": 0,
-        "modifier_1_name": null,
-        "modifier_1_price": null,
-        "modifier_2_name": null,
-        "modifier_2_price": null,
-        "modifier_3_name": null,
-        "modifier_3_price": null
+        "modifiers": [
+
+        ]
       },
       {
         "item_id": 2847229,
@@ -158,12 +187,9 @@ Feature: convert csv to JSON
         "cost": null,
         "price_type": "system",
         "quantity_on_hand": 0,
-        "modifier_1_name": null,
-        "modifier_1_price": null,
-        "modifier_2_name": null,
-        "modifier_2_price": null,
-        "modifier_3_name": null,
-        "modifier_3_price": null
+        "modifiers": [
+
+        ]
       },
       {
         "item_id": 2847230,
@@ -172,12 +198,9 @@ Feature: convert csv to JSON
         "cost": null,
         "price_type": "system",
         "quantity_on_hand": 0,
-        "modifier_1_name": null,
-        "modifier_1_price": null,
-        "modifier_2_name": null,
-        "modifier_2_price": null,
-        "modifier_3_name": null,
-        "modifier_3_price": null
+        "modifiers": [
+
+        ]
       },
       {
         "item_id": 2847231,
@@ -186,12 +209,9 @@ Feature: convert csv to JSON
         "cost": null,
         "price_type": "system",
         "quantity_on_hand": 0,
-        "modifier_1_name": null,
-        "modifier_1_price": null,
-        "modifier_2_name": null,
-        "modifier_2_price": null,
-        "modifier_3_name": null,
-        "modifier_3_price": null
+        "modifiers": [
+
+        ]
       },
       {
         "item_id": 2847232,
@@ -200,12 +220,9 @@ Feature: convert csv to JSON
         "cost": 56,
         "price_type": "system",
         "quantity_on_hand": 440,
-        "modifier_1_name": null,
-        "modifier_1_price": null,
-        "modifier_2_name": null,
-        "modifier_2_price": null,
-        "modifier_3_name": null,
-        "modifier_3_price": null
+        "modifiers": [
+
+        ]
       },
       {
         "item_id": 2847233,
@@ -214,12 +231,16 @@ Feature: convert csv to JSON
         "cost": null,
         "price_type": "system",
         "quantity_on_hand": 0,
-        "modifier_1_name": "Jelly",
-        "modifier_1_price": "$.75",
-        "modifier_2_name": "Peanut Butter",
-        "modifier_2_price": "$1.12",
-        "modifier_3_name": null,
-        "modifier_3_price": null
+        "modifiers": [
+          {
+            "name": "Jelly",
+            "price": "$.75"
+          },
+          {
+            "name": "Peanut Butter",
+            "price": "$1.12"
+          }
+        ]
       }
     ]
     """

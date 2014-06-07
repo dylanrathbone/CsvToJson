@@ -22,7 +22,7 @@ describe JsonGenerator do
 
     it 'should convert the csv to JSON' do
       json_generator.transform_file
-      expect(json_generator.generated_json).to eq("[\n  {\n    \"item_id\": 111010,\n    \"description\": \"Coffee\",\n    \"price\": \"$1.25\"\n  }\n]")
+      expect(json_generator.generated_json).to eq("[\n  {\n    \"item_id\": 111010,\n    \"description\": \"Coffee\",\n    \"price\": \"$1.25\",\n    \"cost\": \"$0.80\",\n    \"price_type\": \"system\",\n    \"quantity_on_hand\": 100000,\n    \"modifiers\": [\n      {\n        \"name\": \"Small\",\n        \"price\": \"-$0.25\"\n      },\n      {\n        \"name\": \"Medium\",\n        \"price\": \"$0.00\"\n      },\n      {\n        \"name\": \"Large\",\n        \"price\": \"$0.30\"\n      }\n    ]\n  }\n]")
     end
 
     it 'should notify the user that the conversion is complete' do
