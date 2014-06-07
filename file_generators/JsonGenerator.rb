@@ -38,6 +38,7 @@ class JsonGenerator
     }
 
     @generated_json = JSON.pretty_generate(reformatted_csv_data)
+
     puts "#{UserMessages::GeneralMessages::JSON_GENERATED} #{@file_name}\n\n#{@generated_json}"
   end
 
