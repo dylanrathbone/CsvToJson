@@ -25,7 +25,7 @@ class JsonGenerator
     temporary_hash_array = Array.new
     csv_as_array_of_hashes = load_file.to_a.map { |row| row.to_hash}
 
-    csv_as_array_of_hashes.each_with_index {|current_csv_array_element, current_index|
+    csv_as_array_of_hashes.each_with_index { | current_csv_array_element, current_index |
 
         temporary_hash_array.push(csv_as_array_of_hashes[current_index])
 
@@ -39,6 +39,7 @@ class JsonGenerator
     @generated_json = JSON.pretty_generate(reformatted_csv_data)
 
     puts "#{UserMessages::GeneralMessages::JSON_GENERATED} #{@file_name}\n\n#{@generated_json}"
+
   end
 
 end
