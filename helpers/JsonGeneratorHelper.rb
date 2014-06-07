@@ -5,7 +5,7 @@ module JsonGeneratorHelper
   # We will assume that the csv file when generated
   # will always have a name/price pair for a modifier/s.
   # A modifier can never specify without both.
-  def modifiers_as_hash_from(csv_array_element)
+  def modifiers_as_hash(csv_array_element)
     modifiers_as_hash = Hash.new
     csv_array_element.each_with_index { |(key, value)|
       if (!!(key.to_s =~ /^modifier_(\d{1,4})/)) && ((!value.to_s.eql?("")))
