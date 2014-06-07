@@ -21,23 +21,23 @@ class JsonGenerator
   private
   def generate_json
 
+    reformatted_csv_data = Array.new
+    temporary_array = Array.new
     csv_as_array_of_hashes = load_file.to_a.map { |row| row.to_hash}
-    formatted_csv_data = Array.new
-    temporary_array_of_hashes = Array.new
 
     csv_as_array_of_hashes.each_with_index {
-        |csv_array_element, csv_array_element_index|
+        |csv_array_element, current_index|
 
-        temporary_array_of_hashes.push(csv_as_array_of_hashes[csv_array_element_index])
+        temporary_array.push(csv_as_array_of_hashes[current_index])
 
-        array_of_modifier_hashes = generate_array_of_modifier_hashes(get_modifiers_as_hash_from(csv_array_element))
+        array_of_modifiers = array_of_modifier_hashes(modifiers_as_hash_from(csv_array_element))
 
-        remove_modifiers_from(temporary_array_of_hashes)
+        remove_modifiers_from(temporary_array)
 
-        formatted_csv_data[csv_array_element_index] = formatted_csv_row(array_of_modifier_hashes, temporary_array_of_hashes)
+        reformatted_csv_data[current_index] = formatted_csv_row(array_of_modifiers, temporary_array)
     }
 
-    @generated_json = JSON.pretty_generate(formatted_csv_data)
+    @generated_json = JSON.pretty_generate(reformatted_csv_data)
     puts "#{UserMessages::GeneralMessages::JSON_GENERATED} #{@file_name}\n\n#{@generated_json}"
   end
 
