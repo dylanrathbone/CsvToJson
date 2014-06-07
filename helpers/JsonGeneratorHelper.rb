@@ -17,7 +17,8 @@ module JsonGeneratorHelper
 
   #Assumption 2:
   # Lets generate an array of hashes each
-  # hash will contain a respective name/price pair for an individual modifier
+  # hash will contain a respective name/price
+  # pair for an individual modifier
   def array_of_modifier_hashes(modifiers_as_hash)
     array_of_modifier_hashes = Array.new
     modifiers_as_hash.each { |key, value|
