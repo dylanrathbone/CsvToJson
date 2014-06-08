@@ -31,7 +31,7 @@ module JsonGeneratorHelper
     return array_of_modifier_hashes
   end
 
-  def build_formatted_csv_row_from(array_of_modifiers, temporary_hash_array)
+  def build_formatted_hash_from(array_of_modifiers, temporary_hash_array)
     hash = Hash[*temporary_hash_array.flatten]
     hash[:modifiers] = array_of_modifiers
     reset(temporary_hash_array)
