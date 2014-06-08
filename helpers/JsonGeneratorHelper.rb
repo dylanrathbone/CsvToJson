@@ -1,12 +1,10 @@
 module JsonGeneratorHelper
 
-  ARRAY_INDEX = 0
-
   # We will assume that the csv file when generated
   # will always have a name/price pair for a modifier/s.
   # A modifier can never specify without both.
   def modifiers_as_hash(csv_array_element)
-    modifiers_as_hash = Hash.new
+    modifiers_as_hash = {}
     csv_array_element.each_with_index { |(key, value)|
       if (!!(key.to_s =~ /^modifier_(\d{1,4})/)) && ((!value.to_s.eql?("")))
         modifiers_as_hash[key] = value
@@ -19,7 +17,7 @@ module JsonGeneratorHelper
   # comprise of a respective name/price pair for each individual
   # modifier
   def build_array_of_modifier_hashes_from(modifiers_as_hash)
-    array_of_modifier_hashes = Array.new
+    array_of_modifier_hashes = []
     modifiers_as_hash.each { |key, value|
       modifier_id = key.to_s.split(/_/)[1]
       if key.to_s =~ /^modifier_(\d{1,4})_name/
@@ -41,11 +39,11 @@ module JsonGeneratorHelper
   end
 
   def reset(temporary_array)
-    temporary_array.delete_at(ARRAY_INDEX)
+    temporary_array.delete_at(0)
   end
 
   def remove_modifiers_from(temporary_array)
-    temporary_array[ARRAY_INDEX].delete_if { |key| key.to_s =~ /^modifier_/ }
+    temporary_array[0].delete_if { |key| key.to_s =~ /^modifier_/ }
   end
 
 end

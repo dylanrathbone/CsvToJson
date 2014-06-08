@@ -21,8 +21,8 @@ class JsonGenerator
   private
   def generate_json
 
-    reformatted_csv_data = Array.new
-    temporary_hash_array = Array.new
+    reformatted_csv_data = []
+    temporary_hash_array = []
     csv_as_array_of_hashes = load_file.to_a.map { |row| row.to_hash}
 
     csv_as_array_of_hashes.each_with_index { | current_csv_array_element, current_index |
