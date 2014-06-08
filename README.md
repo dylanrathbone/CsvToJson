@@ -158,7 +158,7 @@ Usage
 
 <h4>JSON conversion example</h4>
 
-<pre><code>jruby convert.rb single_stock_item.csv json
+<pre><code>jruby convert.rb test_data.csv json
 </code></pre>
 
 The output of which will be:
